@@ -11,8 +11,8 @@
   DTS:LocaleID="9226"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="59"
-  DTS:VersionGUID="{CCF97CD9-5283-4A73-B4F7-48E1F6FE422F}">
+  DTS:VersionBuild="71"
+  DTS:VersionGUID="{9B317336-B720-4175-B60C-90D998975113}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -31,7 +31,7 @@
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
           SQLTask:Connection="{D82C3A5D-F91C-493C-A6D9-CAB79353B1B5}"
-          SQLTask:SqlStatementSource="truncate table Destino_EmpleadosPorOficina&#xA;truncate table Destino_ClientesConMasPedidos&#xA;truncate table Destino_CantidadPedidosPorOficina&#xA;truncate table Destino_empleadosConMasPedidos&#xA;truncate table Destino_Ventas_Por_Anio_Mes&#xA;truncate table Destino_ProductoStockBajo&#xA;truncate table Destino_CantidadProductosPorCategoria&#xA;truncate table Destino_PedidosRechazadosConComentarios" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          SQLTask:SqlStatementSource="truncate table Destino_EmpleadosPorOficina&#xA;truncate table Destino_ClientesConMasPedidos&#xA;truncate table Destino_CantidadPedidosPorOficina&#xA;truncate table Destino_EmpleadosConMasPedidos&#xA;truncate table Destino_Ventas_Por_Anio_Mes&#xA;truncate table Destino_ProductoStockBajo&#xA;truncate table Destino_CantidadProductosPorCategoria&#xA;truncate table Destino_PedidosRechazadosConComentarios" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
@@ -221,7 +221,7 @@
                   description="Nombre de la tabla de la base de datos de destino."
                   expressionType="Notify"
                   name="TableOrViewName"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">"dbo"."Destino_CantidadProductosPorCategoria"</property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">"Destino_CantidadProductosPorCategoria"</property>
                 <property
                   dataType="System.Int32"
                   description="Especifique el número de filas por lote. El valor predeterminado es 0, que utiliza el mismo tamaño que el búfer interno de SSIS. "
@@ -278,10 +278,6 @@
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
-                    <externalMetadataColumn
-                      refId="Package\Tarea Flujo de datos\Destino_CantidadProductosPorCategoria.Inputs[Entrada de destino de ADO NET].ExternalColumns[id]"
-                      dataType="i4"
-                      name="id" />
                     <externalMetadataColumn
                       refId="Package\Tarea Flujo de datos\Destino_CantidadProductosPorCategoria.Inputs[Entrada de destino de ADO NET].ExternalColumns[Id_Categoria]"
                       dataType="i4"
@@ -467,7 +463,7 @@
                   description="Nombre de la tabla de la base de datos de destino."
                   expressionType="Notify"
                   name="TableOrViewName"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">"Destino_empleadosConMasPedidos"</property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">Destino_EmpleadosConMasPedidos</property>
                 <property
                   dataType="System.Int32"
                   description="Especifique el número de filas por lote. El valor predeterminado es 0, que utiliza el mismo tamaño que el búfer interno de SSIS. "
@@ -558,6 +554,10 @@
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Tarea Flujo de datos\Destino_empleadosConMasPedidos.Inputs[Entrada de destino de ADO NET].ExternalColumns[id]"
+                      dataType="i4"
+                      name="id" />
                     <externalMetadataColumn
                       refId="Package\Tarea Flujo de datos\Destino_empleadosConMasPedidos.Inputs[Entrada de destino de ADO NET].ExternalColumns[ID_empleado]"
                       dataType="i4"
@@ -797,7 +797,7 @@
                   description="Nombre de la tabla de la base de datos de destino."
                   expressionType="Notify"
                   name="TableOrViewName"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">"Destino_PedidosRechazadosConComentarios"</property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">"dbo"."Destino_PedidosRechazadosConComentarios"</property>
                 <property
                   dataType="System.Int32"
                   description="Especifique el número de filas por lote. El valor predeterminado es 0, que utiliza el mismo tamaño que el búfer interno de SSIS. "
@@ -879,6 +879,10 @@
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
+                      refId="Package\Tarea Flujo de datos\Destino_PedidosRechazadosConComentarios.Inputs[Entrada de destino de ADO NET].ExternalColumns[id]"
+                      dataType="i4"
+                      name="id" />
+                    <externalMetadataColumn
                       refId="Package\Tarea Flujo de datos\Destino_PedidosRechazadosConComentarios.Inputs[Entrada de destino de ADO NET].ExternalColumns[ID_pedido]"
                       dataType="i4"
                       name="ID_pedido" />
@@ -950,7 +954,7 @@
                   description="Nombre de la tabla de la base de datos de destino."
                   expressionType="Notify"
                   name="TableOrViewName"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">"Destino_ProductoStockBajo"</property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">"dbo"."Destino_ProductoStockBajo"</property>
                 <property
                   dataType="System.Int32"
                   description="Especifique el número de filas por lote. El valor predeterminado es 0, que utiliza el mismo tamaño que el búfer interno de SSIS. "
@@ -1050,6 +1054,10 @@
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Tarea Flujo de datos\Destino_ProductoStockBajo.Inputs[Entrada de destino de ADO NET].ExternalColumns[id]"
+                      dataType="i4"
+                      name="id" />
                     <externalMetadataColumn
                       refId="Package\Tarea Flujo de datos\Destino_ProductoStockBajo.Inputs[Entrada de destino de ADO NET].ExternalColumns[ID_producto]"
                       dataType="wstr"
