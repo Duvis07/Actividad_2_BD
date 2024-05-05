@@ -11,8 +11,8 @@
   DTS:LocaleID="9226"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="55"
-  DTS:VersionGUID="{7BDD2E0D-F417-4155-B141-3EE4F1BD4649}">
+  DTS:VersionBuild="56"
+  DTS:VersionGUID="{0E74187F-D176-476C-AD9A-251F6EDB2BFE}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -2861,25 +2861,37 @@ ORDER BY p.NumeroDePedidos DESC;</property>
         <NodeLayout
           Size="253,42"
           Id="Package\Tarea Flujo de datos\Origen_empleadosConMasPedidos"
-          TopLeft="35,525" />
+          TopLeft="741,310" />
         <NodeLayout
           Size="257,42"
           Id="Package\Tarea Flujo de datos\Destino_empleadosConMasPedidos"
-          TopLeft="30,646" />
+          TopLeft="748,428" />
         <EdgeLayout
           Id="Package\Tarea Flujo de datos.Paths[Salida de origen de ADO NET4]"
-          TopLeft="160,567">
+          TopLeft="867.5,352">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,79"
+              EndConnector="9,76"
               Start="0,0"
-              End="0,71.5">
+              End="9,68.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,71.5" />
+                    End="0,34" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,34"
+                    Point2="0,38"
+                    Point3="4,38" />
+                  <mssgle:LineSegment
+                    End="5,38" />
+                  <mssgle:CubicBezierSegment
+                    Point1="5,38"
+                    Point2="9,38"
+                    Point3="9,42" />
+                  <mssgle:LineSegment
+                    End="9,68.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -2891,25 +2903,37 @@ ORDER BY p.NumeroDePedidos DESC;</property>
         <NodeLayout
           Size="233,42"
           Id="Package\Tarea Flujo de datos\Origen_ Ventas_Por_Anio_Mes"
-          TopLeft="441.5,520.5" />
+          TopLeft="1098.5,37.5" />
         <NodeLayout
           Size="235,42"
           Id="Package\Tarea Flujo de datos\Destino_Ventas_Por_Anio_Mes"
-          TopLeft="441,644" />
+          TopLeft="1087,175" />
         <EdgeLayout
           Id="Package\Tarea Flujo de datos.Paths[Salida de origen de ADO NET5]"
-          TopLeft="558.25,562.5">
+          TopLeft="1215,79.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,81.5"
+              EndConnector="-10.5,95.5"
               Start="0,0"
-              End="0,74">
+              End="-10.5,88">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,74" />
+                    End="0,43.75" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,43.75"
+                    Point2="0,47.75"
+                    Point3="-4,47.75" />
+                  <mssgle:LineSegment
+                    End="-6.5,47.75" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-6.5,47.75"
+                    Point2="-10.5,47.75"
+                    Point3="-10.5,51.75" />
+                  <mssgle:LineSegment
+                    End="-10.5,88" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -2925,33 +2949,21 @@ ORDER BY p.NumeroDePedidos DESC;</property>
         <NodeLayout
           Size="216,42"
           Id="Package\Tarea Flujo de datos\Destino_ProductoStockBajo"
-          TopLeft="738,181" />
+          TopLeft="758,176" />
         <EdgeLayout
           Id="Package\Tarea Flujo de datos.Paths[Salida de origen de ADO NET6]"
-          TopLeft="861,78">
+          TopLeft="863.5,78">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-15,103"
+              EndConnector="0,98"
               Start="0,0"
-              End="-15,95.5">
+              End="0,90.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,47.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,47.5"
-                    Point2="0,51.5"
-                    Point3="-4,51.5" />
-                  <mssgle:LineSegment
-                    End="-11,51.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-11,51.5"
-                    Point2="-15,51.5"
-                    Point3="-15,55.5" />
-                  <mssgle:LineSegment
-                    End="-15,95.5" />
+                    End="0,90.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
