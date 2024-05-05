@@ -11,8 +11,8 @@
   DTS:LocaleID="9226"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="56"
-  DTS:VersionGUID="{0E74187F-D176-476C-AD9A-251F6EDB2BFE}">
+  DTS:VersionBuild="59"
+  DTS:VersionGUID="{CCF97CD9-5283-4A73-B4F7-48E1F6FE422F}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -31,7 +31,7 @@
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
           SQLTask:Connection="{D82C3A5D-F91C-493C-A6D9-CAB79353B1B5}"
-          SQLTask:SqlStatementSource="truncate table Destino_EmpleadosPorOficina&#xA;truncate table Destino_ClientesConMasPedidos&#xA;truncate table Destino_CantidadPedidosPorOficina&#xA;truncate table Destino_empleadosConMasPedidos&#xA;truncate table Destino_Ventas_Por_Anio_Mes&#xA;truncate table Destino_ProductoStockBajo&#xA;truncate table Destino_PedidosRechazadosConComentarios" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          SQLTask:SqlStatementSource="truncate table Destino_EmpleadosPorOficina&#xA;truncate table Destino_ClientesConMasPedidos&#xA;truncate table Destino_CantidadPedidosPorOficina&#xA;truncate table Destino_empleadosConMasPedidos&#xA;truncate table Destino_Ventas_Por_Anio_Mes&#xA;truncate table Destino_ProductoStockBajo&#xA;truncate table Destino_CantidadProductosPorCategoria&#xA;truncate table Destino_PedidosRechazadosConComentarios" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
@@ -200,6 +200,122 @@
                       refId="Package\Tarea Flujo de datos\Destino_CantidadPedidosPorOficina.Outputs[Salida de error de destino de ADO NET].Columns[ErrorColumn]"
                       dataType="i4"
                       lineageId="Package\Tarea Flujo de datos\Destino_CantidadPedidosPorOficina.Outputs[Salida de error de destino de ADO NET].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Tarea Flujo de datos\Destino_CantidadProductosPorCategoria"
+              componentClassID="Microsoft.ManagedComponentHost"
+              contactInfo="Carga datos en una base de datos compatible con ADO.NET que use una vista o tabla de base de datos. Se cargan datos en una tabla nueva o existente. Por ejemplo, se usa un proveedor ADO.NET para ODBC para cargar datos en un destino ODBC.;Microsoft Corporation; Microsoft SQL Server; © Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;2"
+              description="Carga datos en una base de datos compatible con ADO.NET que use una vista o tabla de base de datos. Se cargan datos en una tabla nueva o existente. Por ejemplo, se usa un proveedor ADO.NET para ODBC para cargar datos en un destino ODBC."
+              name="Destino_CantidadProductosPorCategoria"
+              usesDispositions="true"
+              version="2">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Nombre de la tabla de la base de datos de destino."
+                  expressionType="Notify"
+                  name="TableOrViewName"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">"dbo"."Destino_CantidadProductosPorCategoria"</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifique el número de filas por lote. El valor predeterminado es 0, que utiliza el mismo tamaño que el búfer interno de SSIS. "
+                  expressionType="Notify"
+                  name="BatchSize">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Número de segundos antes de que se agote el tiempo de espera de un comando. Un valor de 0 indica un tiempo de espera infinito. "
+                  expressionType="Notify"
+                  name="CommandTimeout">30</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Especifica si se debe usar la interfaz SqlBulkCopy para mejorar el rendimiento de las operaciones de inserción masiva. No todos los proveedores admiten esta interfaz."
+                  expressionType="Notify"
+                  name="UseBulkInsertWhenPossible">true</property>
+                <property
+                  dataType="System.String"
+                  name="UserComponentTypeName">Microsoft.ADONETDestination</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Tarea Flujo de datos\Destino_CantidadProductosPorCategoria.Connections[IDbConnection]"
+                  connectionManagerID="{D82C3A5D-F91C-493C-A6D9-CAB79353B1B5}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[DESKTOP-M1R3CS8_SQLEXPRESS.Stagin]"
+                  description="Administrador de conexiones administrado"
+                  name="IDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Tarea Flujo de datos\Destino_CantidadProductosPorCategoria.Inputs[Entrada de destino de ADO NET]"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="Entrada de destino de ADO NET">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Tarea Flujo de datos\Destino_CantidadProductosPorCategoria.Inputs[Entrada de destino de ADO NET].Columns[Id_Categoria]"
+                      cachedDataType="i4"
+                      cachedName="Id_Categoria"
+                      externalMetadataColumnId="Package\Tarea Flujo de datos\Destino_CantidadProductosPorCategoria.Inputs[Entrada de destino de ADO NET].ExternalColumns[Id_Categoria]"
+                      lineageId="Package\Tarea Flujo de datos\Origen_CantidadProductosPorCategoria.Outputs[Salida de origen de ADO NET].Columns[Id_Categoria]" />
+                    <inputColumn
+                      refId="Package\Tarea Flujo de datos\Destino_CantidadProductosPorCategoria.Inputs[Entrada de destino de ADO NET].Columns[Desc_Categoria]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="Desc_Categoria"
+                      externalMetadataColumnId="Package\Tarea Flujo de datos\Destino_CantidadProductosPorCategoria.Inputs[Entrada de destino de ADO NET].ExternalColumns[Desc_Categoria]"
+                      lineageId="Package\Tarea Flujo de datos\Origen_CantidadProductosPorCategoria.Outputs[Salida de origen de ADO NET].Columns[Desc_Categoria]" />
+                    <inputColumn
+                      refId="Package\Tarea Flujo de datos\Destino_CantidadProductosPorCategoria.Inputs[Entrada de destino de ADO NET].Columns[num_productos]"
+                      cachedDataType="i4"
+                      cachedName="num_productos"
+                      externalMetadataColumnId="Package\Tarea Flujo de datos\Destino_CantidadProductosPorCategoria.Inputs[Entrada de destino de ADO NET].ExternalColumns[num_productos]"
+                      lineageId="Package\Tarea Flujo de datos\Origen_CantidadProductosPorCategoria.Outputs[Salida de origen de ADO NET].Columns[num_productos]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Tarea Flujo de datos\Destino_CantidadProductosPorCategoria.Inputs[Entrada de destino de ADO NET].ExternalColumns[id]"
+                      dataType="i4"
+                      name="id" />
+                    <externalMetadataColumn
+                      refId="Package\Tarea Flujo de datos\Destino_CantidadProductosPorCategoria.Inputs[Entrada de destino de ADO NET].ExternalColumns[Id_Categoria]"
+                      dataType="i4"
+                      name="Id_Categoria" />
+                    <externalMetadataColumn
+                      refId="Package\Tarea Flujo de datos\Destino_CantidadProductosPorCategoria.Inputs[Entrada de destino de ADO NET].ExternalColumns[Desc_Categoria]"
+                      dataType="wstr"
+                      length="50"
+                      name="Desc_Categoria" />
+                    <externalMetadataColumn
+                      refId="Package\Tarea Flujo de datos\Destino_CantidadProductosPorCategoria.Inputs[Entrada de destino de ADO NET].ExternalColumns[num_productos]"
+                      dataType="i4"
+                      name="num_productos" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Tarea Flujo de datos\Destino_CantidadProductosPorCategoria.Outputs[Salida de error de destino de ADO NET]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Salida de error de destino de ADO NET"
+                  synchronousInputId="Package\Tarea Flujo de datos\Destino_CantidadProductosPorCategoria.Inputs[Entrada de destino de ADO NET]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Destino_CantidadProductosPorCategoria.Outputs[Salida de error de destino de ADO NET].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Tarea Flujo de datos\Destino_CantidadProductosPorCategoria.Outputs[Salida de error de destino de ADO NET].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Destino_CantidadProductosPorCategoria.Outputs[Salida de error de destino de ADO NET].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Tarea Flujo de datos\Destino_CantidadProductosPorCategoria.Outputs[Salida de error de destino de ADO NET].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -1488,6 +1604,144 @@ GROUP BY o.ID_oficina, o.Descripcion, o.ciudad,  o.region , o.pais, o.telefono</
               </outputs>
             </component>
             <component
+              refId="Package\Tarea Flujo de datos\Origen_CantidadProductosPorCategoria"
+              componentClassID="Microsoft.ManagedComponentHost"
+              contactInfo="Consume datos de SQL Server, OLE DB, ODBC u Oracle mediante el correspondiente proveedor de datos de .NET Framework. Se usa una instrucción Transact-SQL para definir el conjunto de resultados. Por ejemplo, se extraen datos de SQL Server con el proveedor de datos de .NET Framework para SQL Server.;Microsoft Corporation; Microsoft SQL Server; © Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;4"
+              description="Consume datos de SQL Server, OLE DB, ODBC u Oracle mediante el correspondiente proveedor de datos de .NET Framework. Se usa una instrucción Transact-SQL para definir el conjunto de resultados. Por ejemplo, se extraen datos de SQL Server con el proveedor de datos de .NET Framework para SQL Server."
+              name="Origen_CantidadProductosPorCategoria"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Especifica la instrucción SQL utilizada por el componente para extraer datos."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT cp.Id_Categoria, cp.Desc_Categoria, COUNT(p.ID_producto) AS num_productos
+FROM jardineria.dbo.Categoria_producto cp
+LEFT JOIN jardineria.dbo.producto p ON cp.Id_Categoria = p.Categoria
+GROUP BY cp.Id_Categoria, cp.Desc_Categoria;</property>
+                <property
+                  dataType="System.Int32"
+                  description="Número de segundos antes de que se agote el tiempo de espera de un comando. Un valor de 0 indica un tiempo de espera infinito."
+                  name="CommandTimeout">30</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indica si se debe permitir que columnas externas que no sean de cadenas se conviertan implícitamente en cadenas en las columnas de salida."
+                  name="AllowImplicitStringConversion">true</property>
+                <property
+                  dataType="System.String"
+                  description="Nombre de la tabla de la base de datos de origen."
+                  expressionType="Notify"
+                  name="TableOrViewName"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Especificar el modo de recuperar información de columnas externas"
+                  name="AccessMode"
+                  typeConverter="Microsoft.SqlServer.Dts.Pipeline.DataReaderSourceAdapter+EnumToStringConverter">2</property>
+                <property
+                  dataType="System.String"
+                  name="UserComponentTypeName">Microsoft.DataReaderSourceAdapter</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Tarea Flujo de datos\Origen_CantidadProductosPorCategoria.Connections[IDbConnection]"
+                  connectionManagerID="{27A1E70D-6383-4993-9733-19C12BCD8D84}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[DESKTOP-M1R3CS8_SQLEXPRESS.jardineria]"
+                  description="Administrador de conexiones administrado"
+                  name="IDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Tarea Flujo de datos\Origen_CantidadProductosPorCategoria.Outputs[Salida de origen de ADO NET]"
+                  name="Salida de origen de ADO NET">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Origen_CantidadProductosPorCategoria.Outputs[Salida de origen de ADO NET].Columns[Id_Categoria]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tarea Flujo de datos\Origen_CantidadProductosPorCategoria.Outputs[Salida de origen de ADO NET].ExternalColumns[Id_Categoria]"
+                      lineageId="Package\Tarea Flujo de datos\Origen_CantidadProductosPorCategoria.Outputs[Salida de origen de ADO NET].Columns[Id_Categoria]"
+                      name="Id_Categoria"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Origen_CantidadProductosPorCategoria.Outputs[Salida de origen de ADO NET].Columns[Desc_Categoria]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tarea Flujo de datos\Origen_CantidadProductosPorCategoria.Outputs[Salida de origen de ADO NET].ExternalColumns[Desc_Categoria]"
+                      length="50"
+                      lineageId="Package\Tarea Flujo de datos\Origen_CantidadProductosPorCategoria.Outputs[Salida de origen de ADO NET].Columns[Desc_Categoria]"
+                      name="Desc_Categoria"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Origen_CantidadProductosPorCategoria.Outputs[Salida de origen de ADO NET].Columns[num_productos]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tarea Flujo de datos\Origen_CantidadProductosPorCategoria.Outputs[Salida de origen de ADO NET].ExternalColumns[num_productos]"
+                      lineageId="Package\Tarea Flujo de datos\Origen_CantidadProductosPorCategoria.Outputs[Salida de origen de ADO NET].Columns[num_productos]"
+                      name="num_productos"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Tarea Flujo de datos\Origen_CantidadProductosPorCategoria.Outputs[Salida de origen de ADO NET].ExternalColumns[Id_Categoria]"
+                      dataType="i4"
+                      name="Id_Categoria" />
+                    <externalMetadataColumn
+                      refId="Package\Tarea Flujo de datos\Origen_CantidadProductosPorCategoria.Outputs[Salida de origen de ADO NET].ExternalColumns[Desc_Categoria]"
+                      dataType="wstr"
+                      length="50"
+                      name="Desc_Categoria" />
+                    <externalMetadataColumn
+                      refId="Package\Tarea Flujo de datos\Origen_CantidadProductosPorCategoria.Outputs[Salida de origen de ADO NET].ExternalColumns[num_productos]"
+                      dataType="i4"
+                      name="num_productos" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Tarea Flujo de datos\Origen_CantidadProductosPorCategoria.Outputs[Salida de error de origen de ADO NET]"
+                  isErrorOut="true"
+                  name="Salida de error de origen de ADO NET">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Origen_CantidadProductosPorCategoria.Outputs[Salida de error de origen de ADO NET].Columns[Id_Categoria]"
+                      dataType="i4"
+                      lineageId="Package\Tarea Flujo de datos\Origen_CantidadProductosPorCategoria.Outputs[Salida de error de origen de ADO NET].Columns[Id_Categoria]"
+                      name="Id_Categoria" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Origen_CantidadProductosPorCategoria.Outputs[Salida de error de origen de ADO NET].Columns[Desc_Categoria]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\Tarea Flujo de datos\Origen_CantidadProductosPorCategoria.Outputs[Salida de error de origen de ADO NET].Columns[Desc_Categoria]"
+                      name="Desc_Categoria" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Origen_CantidadProductosPorCategoria.Outputs[Salida de error de origen de ADO NET].Columns[num_productos]"
+                      dataType="i4"
+                      lineageId="Package\Tarea Flujo de datos\Origen_CantidadProductosPorCategoria.Outputs[Salida de error de origen de ADO NET].Columns[num_productos]"
+                      name="num_productos" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Origen_CantidadProductosPorCategoria.Outputs[Salida de error de origen de ADO NET].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Tarea Flujo de datos\Origen_CantidadProductosPorCategoria.Outputs[Salida de error de origen de ADO NET].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Origen_CantidadProductosPorCategoria.Outputs[Salida de error de origen de ADO NET].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Tarea Flujo de datos\Origen_CantidadProductosPorCategoria.Outputs[Salida de error de origen de ADO NET].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
               refId="Package\Tarea Flujo de datos\Origen_empleadosConMasPedidos"
               componentClassID="Microsoft.ManagedComponentHost"
               contactInfo="Consume datos de SQL Server, OLE DB, ODBC u Oracle mediante el correspondiente proveedor de datos de .NET Framework. Se usa una instrucción Transact-SQL para definir el conjunto de resultados. Por ejemplo, se extraen datos de SQL Server con el proveedor de datos de .NET Framework para SQL Server.;Microsoft Corporation; Microsoft SQL Server; © Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;4"
@@ -2649,6 +2903,11 @@ ORDER BY p.NumeroDePedidos DESC;</property>
               endId="Package\Tarea Flujo de datos\Destino_ProductoStockBajo.Inputs[Entrada de destino de ADO NET]"
               name="Salida de origen de ADO NET"
               startId="Package\Tarea Flujo de datos\Origen_ProductoStockBajo.Outputs[Salida de origen de ADO NET]" />
+            <path
+              refId="Package\Tarea Flujo de datos.Paths[Salida de origen de ADO NET7]"
+              endId="Package\Tarea Flujo de datos\Destino_CantidadProductosPorCategoria.Inputs[Entrada de destino de ADO NET]"
+              name="Salida de origen de ADO NET"
+              startId="Package\Tarea Flujo de datos\Origen_CantidadProductosPorCategoria.Outputs[Salida de origen de ADO NET]" />
           </paths>
         </pipeline>
       </DTS:ObjectData>
@@ -2677,13 +2936,13 @@ ORDER BY p.NumeroDePedidos DESC;</property>
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="180,42"
-          Id="Package\Tarea Flujo de datos"
-          TopLeft="92.5,153.5" />
-        <NodeLayout
           Size="176,42"
           Id="Package\Tarea Ejecutar SQL"
           TopLeft="95.5,45.5" />
+        <NodeLayout
+          Size="180,42"
+          Id="Package\Tarea Flujo de datos"
+          TopLeft="92.5,153.5" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Restricción]"
           TopLeft="183,87.5">
@@ -2719,13 +2978,57 @@ ORDER BY p.NumeroDePedidos DESC;</property>
           Id="Package\Tarea Flujo de datos\Origen_PedidosJardineria"
           TopLeft="70.5,37.5" />
         <NodeLayout
-          Size="268,42"
-          Id="Package\Tarea Flujo de datos\Origen_PedidosRechazadosJardineria"
-          TopLeft="377,35" />
+          Size="243,42"
+          Id="Package\Tarea Flujo de datos\Destino_ClientesConMasPedidos"
+          TopLeft="40,178" />
         <NodeLayout
           Size="306,42"
           Id="Package\Tarea Flujo de datos\Destino_PedidosRechazadosConComentarios"
           TopLeft="353,179" />
+        <NodeLayout
+          Size="233,42"
+          Id="Package\Tarea Flujo de datos\Origen_ Ventas_Por_Anio_Mes"
+          TopLeft="1098.5,37.5" />
+        <NodeLayout
+          Size="268,42"
+          Id="Package\Tarea Flujo de datos\Origen_PedidosRechazadosJardineria"
+          TopLeft="377,35" />
+        <NodeLayout
+          Size="212,42"
+          Id="Package\Tarea Flujo de datos\Origen_ProductoStockBajo"
+          TopLeft="755,36" />
+        <NodeLayout
+          Size="216,42"
+          Id="Package\Tarea Flujo de datos\Destino_ProductoStockBajo"
+          TopLeft="758,176" />
+        <NodeLayout
+          Size="225,42"
+          Id="Package\Tarea Flujo de datos\Origen_EmpleadosPorOficina"
+          TopLeft="52,309" />
+        <NodeLayout
+          Size="257,42"
+          Id="Package\Tarea Flujo de datos\Destino_empleadosConMasPedidos"
+          TopLeft="748,428" />
+        <NodeLayout
+          Size="254,42"
+          Id="Package\Tarea Flujo de datos\Origen_CantidadPedidosPorOficina"
+          TopLeft="417.5,319.5" />
+        <NodeLayout
+          Size="235,42"
+          Id="Package\Tarea Flujo de datos\Destino_Ventas_Por_Anio_Mes"
+          TopLeft="1087,175" />
+        <NodeLayout
+          Size="253,42"
+          Id="Package\Tarea Flujo de datos\Origen_empleadosConMasPedidos"
+          TopLeft="741,310" />
+        <NodeLayout
+          Size="258,42"
+          Id="Package\Tarea Flujo de datos\Destino_CantidadPedidosPorOficina"
+          TopLeft="420,430" />
+        <NodeLayout
+          Size="229,42"
+          Id="Package\Tarea Flujo de datos\Destino_EmpleadosPorOficina"
+          TopLeft="39,428" />
         <EdgeLayout
           Id="Package\Tarea Flujo de datos.Paths[Salida de origen de ADO NET]"
           TopLeft="508.5,77">
@@ -2748,14 +3051,152 @@ ORDER BY p.NumeroDePedidos DESC;</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="225,42"
-          Id="Package\Tarea Flujo de datos\Origen_EmpleadosPorOficina"
-          TopLeft="52,309" />
-        <NodeLayout
-          Size="229,42"
-          Id="Package\Tarea Flujo de datos\Destino_EmpleadosPorOficina"
-          TopLeft="39,428" />
+        <EdgeLayout
+          Id="Package\Tarea Flujo de datos.Paths[Salida de origen de ADO NET6]"
+          TopLeft="863.5,78">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,98"
+              Start="0,0"
+              End="0,90.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,90.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Tarea Flujo de datos.Paths[Salida de origen de ADO NET5]"
+          TopLeft="1215,79.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-10.5,95.5"
+              Start="0,0"
+              End="-10.5,88">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,43.75" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,43.75"
+                    Point2="0,47.75"
+                    Point3="-4,47.75" />
+                  <mssgle:LineSegment
+                    End="-6.5,47.75" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-6.5,47.75"
+                    Point2="-10.5,47.75"
+                    Point3="-10.5,51.75" />
+                  <mssgle:LineSegment
+                    End="-10.5,88" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Tarea Flujo de datos.Paths[Salida de origen de ADO NET4]"
+          TopLeft="867.5,352">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="9,76"
+              Start="0,0"
+              End="9,68.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,34" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,34"
+                    Point2="0,38"
+                    Point3="4,38" />
+                  <mssgle:LineSegment
+                    End="5,38" />
+                  <mssgle:CubicBezierSegment
+                    Point1="5,38"
+                    Point2="9,38"
+                    Point3="9,42" />
+                  <mssgle:LineSegment
+                    End="9,68.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Tarea Flujo de datos.Paths[Salida de origen de ADO NET3]"
+          TopLeft="546.75,361.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,68.5"
+              Start="0,0"
+              End="0,61">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,61" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Tarea Flujo de datos.Paths[Salida de origen de ADO NET2]"
+          TopLeft="173.5,79.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-12,98.5"
+              Start="0,0"
+              End="-12,91">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,45.25" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,45.25"
+                    Point2="0,49.25"
+                    Point3="-4,49.25" />
+                  <mssgle:LineSegment
+                    End="-8,49.25" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-8,49.25"
+                    Point2="-12,49.25"
+                    Point3="-12,53.25" />
+                  <mssgle:LineSegment
+                    End="-12,91" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <EdgeLayout
           Id="Package\Tarea Flujo de datos.Paths[Salida de origen de ADO NET1]"
           TopLeft="164.5,351">
@@ -2791,179 +3232,27 @@ ORDER BY p.NumeroDePedidos DESC;</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <NodeLayout
-          Size="243,42"
-          Id="Package\Tarea Flujo de datos\Destino_ClientesConMasPedidos"
-          TopLeft="40,178" />
+          Size="277,42"
+          Id="Package\Tarea Flujo de datos\Origen_CantidadProductosPorCategoria"
+          TopLeft="1071.5,308.5" />
+        <NodeLayout
+          Size="281,42"
+          Id="Package\Tarea Flujo de datos\Destino_CantidadProductosPorCategoria"
+          TopLeft="1074,427" />
         <EdgeLayout
-          Id="Package\Tarea Flujo de datos.Paths[Salida de origen de ADO NET2]"
-          TopLeft="173.5,79.5">
+          Id="Package\Tarea Flujo de datos.Paths[Salida de origen de ADO NET7]"
+          TopLeft="1212.25,350.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-12,98.5"
+              EndConnector="0,76.5"
               Start="0,0"
-              End="-12,91">
+              End="0,69">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,45.25" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,45.25"
-                    Point2="0,49.25"
-                    Point3="-4,49.25" />
-                  <mssgle:LineSegment
-                    End="-8,49.25" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-8,49.25"
-                    Point2="-12,49.25"
-                    Point3="-12,53.25" />
-                  <mssgle:LineSegment
-                    End="-12,91" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="254,42"
-          Id="Package\Tarea Flujo de datos\Origen_CantidadPedidosPorOficina"
-          TopLeft="417.5,319.5" />
-        <NodeLayout
-          Size="258,42"
-          Id="Package\Tarea Flujo de datos\Destino_CantidadPedidosPorOficina"
-          TopLeft="420,430" />
-        <EdgeLayout
-          Id="Package\Tarea Flujo de datos.Paths[Salida de origen de ADO NET3]"
-          TopLeft="546.75,361.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,68.5"
-              Start="0,0"
-              End="0,61">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,61" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="253,42"
-          Id="Package\Tarea Flujo de datos\Origen_empleadosConMasPedidos"
-          TopLeft="741,310" />
-        <NodeLayout
-          Size="257,42"
-          Id="Package\Tarea Flujo de datos\Destino_empleadosConMasPedidos"
-          TopLeft="748,428" />
-        <EdgeLayout
-          Id="Package\Tarea Flujo de datos.Paths[Salida de origen de ADO NET4]"
-          TopLeft="867.5,352">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="9,76"
-              Start="0,0"
-              End="9,68.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,34" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,34"
-                    Point2="0,38"
-                    Point3="4,38" />
-                  <mssgle:LineSegment
-                    End="5,38" />
-                  <mssgle:CubicBezierSegment
-                    Point1="5,38"
-                    Point2="9,38"
-                    Point3="9,42" />
-                  <mssgle:LineSegment
-                    End="9,68.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="233,42"
-          Id="Package\Tarea Flujo de datos\Origen_ Ventas_Por_Anio_Mes"
-          TopLeft="1098.5,37.5" />
-        <NodeLayout
-          Size="235,42"
-          Id="Package\Tarea Flujo de datos\Destino_Ventas_Por_Anio_Mes"
-          TopLeft="1087,175" />
-        <EdgeLayout
-          Id="Package\Tarea Flujo de datos.Paths[Salida de origen de ADO NET5]"
-          TopLeft="1215,79.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-10.5,95.5"
-              Start="0,0"
-              End="-10.5,88">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,43.75" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,43.75"
-                    Point2="0,47.75"
-                    Point3="-4,47.75" />
-                  <mssgle:LineSegment
-                    End="-6.5,47.75" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-6.5,47.75"
-                    Point2="-10.5,47.75"
-                    Point3="-10.5,51.75" />
-                  <mssgle:LineSegment
-                    End="-10.5,88" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="212,42"
-          Id="Package\Tarea Flujo de datos\Origen_ProductoStockBajo"
-          TopLeft="755,36" />
-        <NodeLayout
-          Size="216,42"
-          Id="Package\Tarea Flujo de datos\Destino_ProductoStockBajo"
-          TopLeft="758,176" />
-        <EdgeLayout
-          Id="Package\Tarea Flujo de datos.Paths[Salida de origen de ADO NET6]"
-          TopLeft="863.5,78">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,98"
-              Start="0,0"
-              End="0,90.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,90.5" />
+                    End="0,69" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -2984,7 +3273,7 @@ ORDER BY p.NumeroDePedidos DESC;</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Tarea Flujo de datos\Origen_PedidosRechazadosJardineria">
+    design-time-name="Package\Tarea Flujo de datos\Destino_ClientesConMasPedidos">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -3000,62 +3289,6 @@ ORDER BY p.NumeroDePedidos DESC;</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Tarea Flujo de datos\Origen_EmpleadosPorOficina">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Tarea Flujo de datos\Destino_EmpleadosPorOficina">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Tarea Flujo de datos\Destino_ClientesConMasPedidos">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Tarea Flujo de datos\Origen_CantidadPedidosPorOficina">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Tarea Flujo de datos\Destino_CantidadPedidosPorOficina">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Tarea Flujo de datos\Origen_empleadosConMasPedidos">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Tarea Flujo de datos\Destino_empleadosConMasPedidos">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
     design-time-name="Package\Tarea Flujo de datos\Origen_ Ventas_Por_Anio_Mes">
     <Properties>
       <Property>
@@ -3064,7 +3297,7 @@ ORDER BY p.NumeroDePedidos DESC;</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Tarea Flujo de datos\Destino_Ventas_Por_Anio_Mes">
+    design-time-name="Package\Tarea Flujo de datos\Origen_PedidosRechazadosJardineria">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -3081,6 +3314,78 @@ ORDER BY p.NumeroDePedidos DESC;</property>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\Tarea Flujo de datos\Destino_ProductoStockBajo">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Tarea Flujo de datos\Origen_EmpleadosPorOficina">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Tarea Flujo de datos\Destino_empleadosConMasPedidos">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Tarea Flujo de datos\Origen_CantidadPedidosPorOficina">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Tarea Flujo de datos\Destino_Ventas_Por_Anio_Mes">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Tarea Flujo de datos\Origen_empleadosConMasPedidos">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Tarea Flujo de datos\Destino_CantidadPedidosPorOficina">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Tarea Flujo de datos\Destino_EmpleadosPorOficina">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Tarea Flujo de datos\Origen_CantidadProductosPorCategoria">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Tarea Flujo de datos\Destino_CantidadProductosPorCategoria">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
