@@ -11,8 +11,8 @@
   DTS:LocaleID="9226"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="91"
-  DTS:VersionGUID="{9097BF4D-B01F-4AE0-8E55-CCA64C02CDEF}">
+  DTS:VersionBuild="95"
+  DTS:VersionGUID="{2FAB93AE-A0A9-45AC-AE9E-CFFB2778F6E8}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -97,12 +97,6 @@
                   name="Entrada de destino de ADO NET">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Tarea_Extraccion_Datos_Jardineria\Destino_Categoria_Producto.Inputs[Entrada de destino de ADO NET].Columns[Id_Categoria]"
-                      cachedDataType="i4"
-                      cachedName="Id_Categoria"
-                      externalMetadataColumnId="Package\Tarea_Extraccion_Datos_Jardineria\Destino_Categoria_Producto.Inputs[Entrada de destino de ADO NET].ExternalColumns[Id_Categoria]"
-                      lineageId="Package\Tarea_Extraccion_Datos_Jardineria\Origen_Categoria_ProductoJardineria.Outputs[Salida de origen de ADO NET].Columns[Id_Categoria]" />
-                    <inputColumn
                       refId="Package\Tarea_Extraccion_Datos_Jardineria\Destino_Categoria_Producto.Inputs[Entrada de destino de ADO NET].Columns[Desc_Categoria]"
                       cachedDataType="wstr"
                       cachedLength="50"
@@ -115,6 +109,12 @@
                       cachedName="descripcion_texto"
                       externalMetadataColumnId="Package\Tarea_Extraccion_Datos_Jardineria\Destino_Categoria_Producto.Inputs[Entrada de destino de ADO NET].ExternalColumns[descripcion_texto]"
                       lineageId="Package\Tarea_Extraccion_Datos_Jardineria\Origen_Categoria_ProductoJardineria.Outputs[Salida de origen de ADO NET].Columns[descripcion_texto]" />
+                    <inputColumn
+                      refId="Package\Tarea_Extraccion_Datos_Jardineria\Destino_Categoria_Producto.Inputs[Entrada de destino de ADO NET].Columns[Id_Categoria]"
+                      cachedDataType="i4"
+                      cachedName="Id_Categoria"
+                      externalMetadataColumnId="Package\Tarea_Extraccion_Datos_Jardineria\Destino_Categoria_Producto.Inputs[Entrada de destino de ADO NET].ExternalColumns[Id_Categoria_o]"
+                      lineageId="Package\Tarea_Extraccion_Datos_Jardineria\Origen_Categoria_ProductoJardineria.Outputs[Salida de origen de ADO NET].Columns[Id_Categoria]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -122,6 +122,10 @@
                       refId="Package\Tarea_Extraccion_Datos_Jardineria\Destino_Categoria_Producto.Inputs[Entrada de destino de ADO NET].ExternalColumns[Id_Categoria]"
                       dataType="i4"
                       name="Id_Categoria" />
+                    <externalMetadataColumn
+                      refId="Package\Tarea_Extraccion_Datos_Jardineria\Destino_Categoria_Producto.Inputs[Entrada de destino de ADO NET].ExternalColumns[Id_Categoria_o]"
+                      dataType="i4"
+                      name="Id_Categoria_o" />
                     <externalMetadataColumn
                       refId="Package\Tarea_Extraccion_Datos_Jardineria\Destino_Categoria_Producto.Inputs[Entrada de destino de ADO NET].ExternalColumns[Desc_Categoria]"
                       dataType="wstr"
@@ -210,12 +214,6 @@
                   name="Entrada de destino de ADO NET">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Tarea_Extraccion_Datos_Jardineria\Destino_Cliente.Inputs[Entrada de destino de ADO NET].Columns[ID_cliente]"
-                      cachedDataType="i4"
-                      cachedName="ID_cliente"
-                      externalMetadataColumnId="Package\Tarea_Extraccion_Datos_Jardineria\Destino_Cliente.Inputs[Entrada de destino de ADO NET].ExternalColumns[ID_cliente]"
-                      lineageId="Package\Tarea_Extraccion_Datos_Jardineria\Origen_ClienteJardineria.Outputs[Salida de origen de ADO NET].Columns[ID_cliente]" />
-                    <inputColumn
                       refId="Package\Tarea_Extraccion_Datos_Jardineria\Destino_Cliente.Inputs[Entrada de destino de ADO NET].Columns[nombre_cliente]"
                       cachedDataType="wstr"
                       cachedLength="50"
@@ -277,6 +275,12 @@
                       cachedName="ID_empleado_rep_ventas"
                       externalMetadataColumnId="Package\Tarea_Extraccion_Datos_Jardineria\Destino_Cliente.Inputs[Entrada de destino de ADO NET].ExternalColumns[ID_empleado_rep_ventas]"
                       lineageId="Package\Tarea_Extraccion_Datos_Jardineria\Origen_ClienteJardineria.Outputs[Salida de origen de ADO NET].Columns[ID_empleado_rep_ventas]" />
+                    <inputColumn
+                      refId="Package\Tarea_Extraccion_Datos_Jardineria\Destino_Cliente.Inputs[Entrada de destino de ADO NET].Columns[ID_cliente]"
+                      cachedDataType="i4"
+                      cachedName="ID_cliente"
+                      externalMetadataColumnId="Package\Tarea_Extraccion_Datos_Jardineria\Destino_Cliente.Inputs[Entrada de destino de ADO NET].ExternalColumns[ID_cliente_o]"
+                      lineageId="Package\Tarea_Extraccion_Datos_Jardineria\Origen_ClienteJardineria.Outputs[Salida de origen de ADO NET].Columns[ID_cliente]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -284,6 +288,10 @@
                       refId="Package\Tarea_Extraccion_Datos_Jardineria\Destino_Cliente.Inputs[Entrada de destino de ADO NET].ExternalColumns[ID_cliente]"
                       dataType="i4"
                       name="ID_cliente" />
+                    <externalMetadataColumn
+                      refId="Package\Tarea_Extraccion_Datos_Jardineria\Destino_Cliente.Inputs[Entrada de destino de ADO NET].ExternalColumns[ID_cliente_o]"
+                      dataType="i4"
+                      name="ID_cliente_o" />
                     <externalMetadataColumn
                       refId="Package\Tarea_Extraccion_Datos_Jardineria\Destino_Cliente.Inputs[Entrada de destino de ADO NET].ExternalColumns[nombre_cliente]"
                       dataType="wstr"
@@ -406,12 +414,6 @@
                   name="Entrada de destino de ADO NET">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Tarea_Extraccion_Datos_Jardineria\Destino_Detalle_Pedido.Inputs[Entrada de destino de ADO NET].Columns[ID_pedido]"
-                      cachedDataType="i4"
-                      cachedName="ID_pedido"
-                      externalMetadataColumnId="Package\Tarea_Extraccion_Datos_Jardineria\Destino_Detalle_Pedido.Inputs[Entrada de destino de ADO NET].ExternalColumns[ID_pedido]"
-                      lineageId="Package\Tarea_Extraccion_Datos_Jardineria\Origen_Detalle_PedidoJardineria.Outputs[Salida de origen de ADO NET].Columns[ID_pedido]" />
-                    <inputColumn
                       refId="Package\Tarea_Extraccion_Datos_Jardineria\Destino_Detalle_Pedido.Inputs[Entrada de destino de ADO NET].Columns[ID_producto]"
                       cachedDataType="wstr"
                       cachedLength="15"
@@ -432,6 +434,12 @@
                       cachedScale="2"
                       externalMetadataColumnId="Package\Tarea_Extraccion_Datos_Jardineria\Destino_Detalle_Pedido.Inputs[Entrada de destino de ADO NET].ExternalColumns[precio_unidad]"
                       lineageId="Package\Tarea_Extraccion_Datos_Jardineria\Origen_Detalle_PedidoJardineria.Outputs[Salida de origen de ADO NET].Columns[precio_unidad]" />
+                    <inputColumn
+                      refId="Package\Tarea_Extraccion_Datos_Jardineria\Destino_Detalle_Pedido.Inputs[Entrada de destino de ADO NET].Columns[ID_pedido]"
+                      cachedDataType="i4"
+                      cachedName="ID_pedido"
+                      externalMetadataColumnId="Package\Tarea_Extraccion_Datos_Jardineria\Destino_Detalle_Pedido.Inputs[Entrada de destino de ADO NET].ExternalColumns[ID_pedido_o]"
+                      lineageId="Package\Tarea_Extraccion_Datos_Jardineria\Origen_Detalle_PedidoJardineria.Outputs[Salida de origen de ADO NET].Columns[ID_pedido]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -439,6 +447,10 @@
                       refId="Package\Tarea_Extraccion_Datos_Jardineria\Destino_Detalle_Pedido.Inputs[Entrada de destino de ADO NET].ExternalColumns[ID_pedido]"
                       dataType="i4"
                       name="ID_pedido" />
+                    <externalMetadataColumn
+                      refId="Package\Tarea_Extraccion_Datos_Jardineria\Destino_Detalle_Pedido.Inputs[Entrada de destino de ADO NET].ExternalColumns[ID_pedido_o]"
+                      dataType="i4"
+                      name="ID_pedido_o" />
                     <externalMetadataColumn
                       refId="Package\Tarea_Extraccion_Datos_Jardineria\Destino_Detalle_Pedido.Inputs[Entrada de destino de ADO NET].ExternalColumns[ID_producto]"
                       dataType="wstr"
@@ -496,7 +508,7 @@
                   description="Nombre de la tabla de la base de datos de destino."
                   expressionType="Notify"
                   name="TableOrViewName"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">"dbo"."Destino_Empleados"</property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">"Destino_Empleados"</property>
                 <property
                   dataType="System.Int32"
                   description="Especifique el número de filas por lote. El valor predeterminado es 0, que utiliza el mismo tamaño que el búfer interno de SSIS. "
@@ -531,12 +543,6 @@
                   hasSideEffects="true"
                   name="Entrada de destino de ADO NET">
                   <inputColumns>
-                    <inputColumn
-                      refId="Package\Tarea_Extraccion_Datos_Jardineria\Destino_Empleados.Inputs[Entrada de destino de ADO NET].Columns[ID_empleado]"
-                      cachedDataType="i4"
-                      cachedName="ID_empleado"
-                      externalMetadataColumnId="Package\Tarea_Extraccion_Datos_Jardineria\Destino_Empleados.Inputs[Entrada de destino de ADO NET].ExternalColumns[ID_empleado]"
-                      lineageId="Package\Tarea_Extraccion_Datos_Jardineria\Origen_EmpleadosJardineria.Outputs[Salida de origen de ADO NET].Columns[ID_empleado]" />
                     <inputColumn
                       refId="Package\Tarea_Extraccion_Datos_Jardineria\Destino_Empleados.Inputs[Entrada de destino de ADO NET].Columns[nombre]"
                       cachedDataType="wstr"
@@ -578,6 +584,12 @@
                       cachedName="puesto"
                       externalMetadataColumnId="Package\Tarea_Extraccion_Datos_Jardineria\Destino_Empleados.Inputs[Entrada de destino de ADO NET].ExternalColumns[puesto]"
                       lineageId="Package\Tarea_Extraccion_Datos_Jardineria\Origen_EmpleadosJardineria.Outputs[Salida de origen de ADO NET].Columns[puesto]" />
+                    <inputColumn
+                      refId="Package\Tarea_Extraccion_Datos_Jardineria\Destino_Empleados.Inputs[Entrada de destino de ADO NET].Columns[ID_empleado]"
+                      cachedDataType="i4"
+                      cachedName="ID_empleado"
+                      externalMetadataColumnId="Package\Tarea_Extraccion_Datos_Jardineria\Destino_Empleados.Inputs[Entrada de destino de ADO NET].ExternalColumns[ID_empleado_o]"
+                      lineageId="Package\Tarea_Extraccion_Datos_Jardineria\Origen_EmpleadosJardineria.Outputs[Salida de origen de ADO NET].Columns[ID_empleado]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -585,6 +597,10 @@
                       refId="Package\Tarea_Extraccion_Datos_Jardineria\Destino_Empleados.Inputs[Entrada de destino de ADO NET].ExternalColumns[ID_empleado]"
                       dataType="i4"
                       name="ID_empleado" />
+                    <externalMetadataColumn
+                      refId="Package\Tarea_Extraccion_Datos_Jardineria\Destino_Empleados.Inputs[Entrada de destino de ADO NET].ExternalColumns[ID_empleado_o]"
+                      dataType="i4"
+                      name="ID_empleado_o" />
                     <externalMetadataColumn
                       refId="Package\Tarea_Extraccion_Datos_Jardineria\Destino_Empleados.Inputs[Entrada de destino de ADO NET].ExternalColumns[nombre]"
                       dataType="wstr"
@@ -656,7 +672,7 @@
                   description="Nombre de la tabla de la base de datos de destino."
                   expressionType="Notify"
                   name="TableOrViewName"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">"dbo"."Destino_Oficina"</property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">"Destino_Oficina"</property>
                 <property
                   dataType="System.Int32"
                   description="Especifique el número de filas por lote. El valor predeterminado es 0, que utiliza el mismo tamaño que el búfer interno de SSIS. "
@@ -691,12 +707,6 @@
                   hasSideEffects="true"
                   name="Entrada de destino de ADO NET">
                   <inputColumns>
-                    <inputColumn
-                      refId="Package\Tarea_Extraccion_Datos_Jardineria\Destino_Oficina.Inputs[Entrada de destino de ADO NET].Columns[ID_oficina]"
-                      cachedDataType="i4"
-                      cachedName="ID_oficina"
-                      externalMetadataColumnId="Package\Tarea_Extraccion_Datos_Jardineria\Destino_Oficina.Inputs[Entrada de destino de ADO NET].ExternalColumns[ID_oficina]"
-                      lineageId="Package\Tarea_Extraccion_Datos_Jardineria\Origen_OficinaJardineria.Outputs[Salida de origen de ADO NET].Columns[ID_oficina]" />
                     <inputColumn
                       refId="Package\Tarea_Extraccion_Datos_Jardineria\Destino_Oficina.Inputs[Entrada de destino de ADO NET].Columns[Descripcion]"
                       cachedDataType="wstr"
@@ -739,6 +749,12 @@
                       cachedName="linea_direccion1"
                       externalMetadataColumnId="Package\Tarea_Extraccion_Datos_Jardineria\Destino_Oficina.Inputs[Entrada de destino de ADO NET].ExternalColumns[linea_direccion1]"
                       lineageId="Package\Tarea_Extraccion_Datos_Jardineria\Origen_OficinaJardineria.Outputs[Salida de origen de ADO NET].Columns[linea_direccion1]" />
+                    <inputColumn
+                      refId="Package\Tarea_Extraccion_Datos_Jardineria\Destino_Oficina.Inputs[Entrada de destino de ADO NET].Columns[ID_oficina]"
+                      cachedDataType="i4"
+                      cachedName="ID_oficina"
+                      externalMetadataColumnId="Package\Tarea_Extraccion_Datos_Jardineria\Destino_Oficina.Inputs[Entrada de destino de ADO NET].ExternalColumns[ID_oficina_o]"
+                      lineageId="Package\Tarea_Extraccion_Datos_Jardineria\Origen_OficinaJardineria.Outputs[Salida de origen de ADO NET].Columns[ID_oficina]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -746,6 +762,10 @@
                       refId="Package\Tarea_Extraccion_Datos_Jardineria\Destino_Oficina.Inputs[Entrada de destino de ADO NET].ExternalColumns[ID_oficina]"
                       dataType="i4"
                       name="ID_oficina" />
+                    <externalMetadataColumn
+                      refId="Package\Tarea_Extraccion_Datos_Jardineria\Destino_Oficina.Inputs[Entrada de destino de ADO NET].ExternalColumns[ID_oficina_o]"
+                      dataType="i4"
+                      name="ID_oficina_o" />
                     <externalMetadataColumn
                       refId="Package\Tarea_Extraccion_Datos_Jardineria\Destino_Oficina.Inputs[Entrada de destino de ADO NET].ExternalColumns[Descripcion]"
                       dataType="wstr"
@@ -818,7 +838,7 @@
                   description="Nombre de la tabla de la base de datos de destino."
                   expressionType="Notify"
                   name="TableOrViewName"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">"dbo"."Destino_Pagos"</property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">"Destino_Pagos"</property>
                 <property
                   dataType="System.Int32"
                   description="Especifique el número de filas por lote. El valor predeterminado es 0, que utiliza el mismo tamaño que el búfer interno de SSIS. "
@@ -854,12 +874,6 @@
                   name="Entrada de destino de ADO NET">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Tarea_Extraccion_Datos_Jardineria\Destino_Pagos.Inputs[Entrada de destino de ADO NET].Columns[ID_cliente]"
-                      cachedDataType="i4"
-                      cachedName="ID_cliente"
-                      externalMetadataColumnId="Package\Tarea_Extraccion_Datos_Jardineria\Destino_Pagos.Inputs[Entrada de destino de ADO NET].ExternalColumns[ID_cliente]"
-                      lineageId="Package\Tarea_Extraccion_Datos_Jardineria\Origen_PagosJardineria.Outputs[Salida de origen de ADO NET].Columns[ID_cliente]" />
-                    <inputColumn
                       refId="Package\Tarea_Extraccion_Datos_Jardineria\Destino_Pagos.Inputs[Entrada de destino de ADO NET].Columns[forma_pago]"
                       cachedDataType="wstr"
                       cachedLength="40"
@@ -887,6 +901,12 @@
                       cachedScale="2"
                       externalMetadataColumnId="Package\Tarea_Extraccion_Datos_Jardineria\Destino_Pagos.Inputs[Entrada de destino de ADO NET].ExternalColumns[total]"
                       lineageId="Package\Tarea_Extraccion_Datos_Jardineria\Origen_PagosJardineria.Outputs[Salida de origen de ADO NET].Columns[total]" />
+                    <inputColumn
+                      refId="Package\Tarea_Extraccion_Datos_Jardineria\Destino_Pagos.Inputs[Entrada de destino de ADO NET].Columns[ID_cliente]"
+                      cachedDataType="i4"
+                      cachedName="ID_cliente"
+                      externalMetadataColumnId="Package\Tarea_Extraccion_Datos_Jardineria\Destino_Pagos.Inputs[Entrada de destino de ADO NET].ExternalColumns[ID_cliente_o]"
+                      lineageId="Package\Tarea_Extraccion_Datos_Jardineria\Origen_PagosJardineria.Outputs[Salida de origen de ADO NET].Columns[ID_cliente]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -894,6 +914,10 @@
                       refId="Package\Tarea_Extraccion_Datos_Jardineria\Destino_Pagos.Inputs[Entrada de destino de ADO NET].ExternalColumns[ID_cliente]"
                       dataType="i4"
                       name="ID_cliente" />
+                    <externalMetadataColumn
+                      refId="Package\Tarea_Extraccion_Datos_Jardineria\Destino_Pagos.Inputs[Entrada de destino de ADO NET].ExternalColumns[ID_cliente_o]"
+                      dataType="i4"
+                      name="ID_cliente_o" />
                     <externalMetadataColumn
                       refId="Package\Tarea_Extraccion_Datos_Jardineria\Destino_Pagos.Inputs[Entrada de destino de ADO NET].ExternalColumns[forma_pago]"
                       dataType="wstr"
@@ -992,12 +1016,6 @@
                   name="Entrada de destino de ADO NET">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Tarea_Extraccion_Datos_Jardineria\Destino_Pedidos.Inputs[Entrada de destino de ADO NET].Columns[ID_pedido]"
-                      cachedDataType="i4"
-                      cachedName="ID_pedido"
-                      externalMetadataColumnId="Package\Tarea_Extraccion_Datos_Jardineria\Destino_Pedidos.Inputs[Entrada de destino de ADO NET].ExternalColumns[ID_pedido]"
-                      lineageId="Package\Tarea_Extraccion_Datos_Jardineria\Origen_PedidosJardineria.Outputs[Salida de origen de ADO NET].Columns[ID_pedido]" />
-                    <inputColumn
                       refId="Package\Tarea_Extraccion_Datos_Jardineria\Destino_Pedidos.Inputs[Entrada de destino de ADO NET].Columns[fecha_pedido]"
                       cachedDataType="dbDate"
                       cachedName="fecha_pedido"
@@ -1028,6 +1046,12 @@
                       cachedName="ID_cliente"
                       externalMetadataColumnId="Package\Tarea_Extraccion_Datos_Jardineria\Destino_Pedidos.Inputs[Entrada de destino de ADO NET].ExternalColumns[ID_cliente]"
                       lineageId="Package\Tarea_Extraccion_Datos_Jardineria\Origen_PedidosJardineria.Outputs[Salida de origen de ADO NET].Columns[ID_cliente]" />
+                    <inputColumn
+                      refId="Package\Tarea_Extraccion_Datos_Jardineria\Destino_Pedidos.Inputs[Entrada de destino de ADO NET].Columns[ID_pedido]"
+                      cachedDataType="i4"
+                      cachedName="ID_pedido"
+                      externalMetadataColumnId="Package\Tarea_Extraccion_Datos_Jardineria\Destino_Pedidos.Inputs[Entrada de destino de ADO NET].ExternalColumns[ID_pedido_o]"
+                      lineageId="Package\Tarea_Extraccion_Datos_Jardineria\Origen_PedidosJardineria.Outputs[Salida de origen de ADO NET].Columns[ID_pedido]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -1035,6 +1059,10 @@
                       refId="Package\Tarea_Extraccion_Datos_Jardineria\Destino_Pedidos.Inputs[Entrada de destino de ADO NET].ExternalColumns[ID_pedido]"
                       dataType="i4"
                       name="ID_pedido" />
+                    <externalMetadataColumn
+                      refId="Package\Tarea_Extraccion_Datos_Jardineria\Destino_Pedidos.Inputs[Entrada de destino de ADO NET].ExternalColumns[ID_pedido_o]"
+                      dataType="i4"
+                      name="ID_pedido_o" />
                     <externalMetadataColumn
                       refId="Package\Tarea_Extraccion_Datos_Jardineria\Destino_Pedidos.Inputs[Entrada de destino de ADO NET].ExternalColumns[fecha_pedido]"
                       dataType="dbTimeStamp"
@@ -1134,13 +1162,6 @@
                   name="Entrada de destino de ADO NET">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Tarea_Extraccion_Datos_Jardineria\Destino_Productos.Inputs[Entrada de destino de ADO NET].Columns[ID_producto]"
-                      cachedDataType="wstr"
-                      cachedLength="15"
-                      cachedName="ID_producto"
-                      externalMetadataColumnId="Package\Tarea_Extraccion_Datos_Jardineria\Destino_Productos.Inputs[Entrada de destino de ADO NET].ExternalColumns[ID_producto]"
-                      lineageId="Package\Tarea_Extraccion_Datos_Jardineria\Origen_ProductosJardineria.Outputs[Salida de origen de ADO NET].Columns[ID_producto]" />
-                    <inputColumn
                       refId="Package\Tarea_Extraccion_Datos_Jardineria\Destino_Productos.Inputs[Entrada de destino de ADO NET].Columns[nombre]"
                       cachedDataType="wstr"
                       cachedLength="70"
@@ -1188,14 +1209,25 @@
                       cachedScale="2"
                       externalMetadataColumnId="Package\Tarea_Extraccion_Datos_Jardineria\Destino_Productos.Inputs[Entrada de destino de ADO NET].ExternalColumns[precio_proveedor]"
                       lineageId="Package\Tarea_Extraccion_Datos_Jardineria\Origen_ProductosJardineria.Outputs[Salida de origen de ADO NET].Columns[precio_proveedor]" />
+                    <inputColumn
+                      refId="Package\Tarea_Extraccion_Datos_Jardineria\Destino_Productos.Inputs[Entrada de destino de ADO NET].Columns[ID_producto]"
+                      cachedDataType="wstr"
+                      cachedLength="15"
+                      cachedName="ID_producto"
+                      externalMetadataColumnId="Package\Tarea_Extraccion_Datos_Jardineria\Destino_Productos.Inputs[Entrada de destino de ADO NET].ExternalColumns[ID_producto_o]"
+                      lineageId="Package\Tarea_Extraccion_Datos_Jardineria\Origen_ProductosJardineria.Outputs[Salida de origen de ADO NET].Columns[ID_producto]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
                       refId="Package\Tarea_Extraccion_Datos_Jardineria\Destino_Productos.Inputs[Entrada de destino de ADO NET].ExternalColumns[ID_producto]"
+                      dataType="i4"
+                      name="ID_producto" />
+                    <externalMetadataColumn
+                      refId="Package\Tarea_Extraccion_Datos_Jardineria\Destino_Productos.Inputs[Entrada de destino de ADO NET].ExternalColumns[ID_producto_o]"
                       dataType="wstr"
                       length="15"
-                      name="ID_producto" />
+                      name="ID_producto_o" />
                     <externalMetadataColumn
                       refId="Package\Tarea_Extraccion_Datos_Jardineria\Destino_Productos.Inputs[Entrada de destino de ADO NET].ExternalColumns[nombre]"
                       dataType="wstr"
@@ -2892,44 +2924,44 @@
           <paths>
             <path
               refId="Package\Tarea_Extraccion_Datos_Jardineria.Paths[Salida de origen de ADO NET]"
-              endId="Package\Tarea_Extraccion_Datos_Jardineria\Destino_Pagos.Inputs[Entrada de destino de ADO NET]"
-              name="Salida de origen de ADO NET"
-              startId="Package\Tarea_Extraccion_Datos_Jardineria\Origen_PagosJardineria.Outputs[Salida de origen de ADO NET]" />
-            <path
-              refId="Package\Tarea_Extraccion_Datos_Jardineria.Paths[Salida de origen de ADO NET1]"
-              endId="Package\Tarea_Extraccion_Datos_Jardineria\Destino_Oficina.Inputs[Entrada de destino de ADO NET]"
-              name="Salida de origen de ADO NET"
-              startId="Package\Tarea_Extraccion_Datos_Jardineria\Origen_OficinaJardineria.Outputs[Salida de origen de ADO NET]" />
-            <path
-              refId="Package\Tarea_Extraccion_Datos_Jardineria.Paths[Salida de origen de ADO NET2]"
-              endId="Package\Tarea_Extraccion_Datos_Jardineria\Destino_Empleados.Inputs[Entrada de destino de ADO NET]"
-              name="Salida de origen de ADO NET"
-              startId="Package\Tarea_Extraccion_Datos_Jardineria\Origen_EmpleadosJardineria.Outputs[Salida de origen de ADO NET]" />
-            <path
-              refId="Package\Tarea_Extraccion_Datos_Jardineria.Paths[Salida de origen de ADO NET3]"
-              endId="Package\Tarea_Extraccion_Datos_Jardineria\Destino_Detalle_Pedido.Inputs[Entrada de destino de ADO NET]"
-              name="Salida de origen de ADO NET"
-              startId="Package\Tarea_Extraccion_Datos_Jardineria\Origen_Detalle_PedidoJardineria.Outputs[Salida de origen de ADO NET]" />
-            <path
-              refId="Package\Tarea_Extraccion_Datos_Jardineria.Paths[Salida de origen de ADO NET4]"
-              endId="Package\Tarea_Extraccion_Datos_Jardineria\Destino_Cliente.Inputs[Entrada de destino de ADO NET]"
-              name="Salida de origen de ADO NET"
-              startId="Package\Tarea_Extraccion_Datos_Jardineria\Origen_ClienteJardineria.Outputs[Salida de origen de ADO NET]" />
-            <path
-              refId="Package\Tarea_Extraccion_Datos_Jardineria.Paths[Salida de origen de ADO NET5]"
-              endId="Package\Tarea_Extraccion_Datos_Jardineria\Destino_Categoria_Producto.Inputs[Entrada de destino de ADO NET]"
-              name="Salida de origen de ADO NET"
-              startId="Package\Tarea_Extraccion_Datos_Jardineria\Origen_Categoria_ProductoJardineria.Outputs[Salida de origen de ADO NET]" />
-            <path
-              refId="Package\Tarea_Extraccion_Datos_Jardineria.Paths[Salida de origen de ADO NET6]"
               endId="Package\Tarea_Extraccion_Datos_Jardineria\Destino_Pedidos.Inputs[Entrada de destino de ADO NET]"
               name="Salida de origen de ADO NET"
               startId="Package\Tarea_Extraccion_Datos_Jardineria\Origen_PedidosJardineria.Outputs[Salida de origen de ADO NET]" />
             <path
-              refId="Package\Tarea_Extraccion_Datos_Jardineria.Paths[Salida de origen de ADO NET7]"
+              refId="Package\Tarea_Extraccion_Datos_Jardineria.Paths[Salida de origen de ADO NET1]"
               endId="Package\Tarea_Extraccion_Datos_Jardineria\Destino_Productos.Inputs[Entrada de destino de ADO NET]"
               name="Salida de origen de ADO NET"
               startId="Package\Tarea_Extraccion_Datos_Jardineria\Origen_ProductosJardineria.Outputs[Salida de origen de ADO NET]" />
+            <path
+              refId="Package\Tarea_Extraccion_Datos_Jardineria.Paths[Salida de origen de ADO NET2]"
+              endId="Package\Tarea_Extraccion_Datos_Jardineria\Destino_Pagos.Inputs[Entrada de destino de ADO NET]"
+              name="Salida de origen de ADO NET"
+              startId="Package\Tarea_Extraccion_Datos_Jardineria\Origen_PagosJardineria.Outputs[Salida de origen de ADO NET]" />
+            <path
+              refId="Package\Tarea_Extraccion_Datos_Jardineria.Paths[Salida de origen de ADO NET3]"
+              endId="Package\Tarea_Extraccion_Datos_Jardineria\Destino_Oficina.Inputs[Entrada de destino de ADO NET]"
+              name="Salida de origen de ADO NET"
+              startId="Package\Tarea_Extraccion_Datos_Jardineria\Origen_OficinaJardineria.Outputs[Salida de origen de ADO NET]" />
+            <path
+              refId="Package\Tarea_Extraccion_Datos_Jardineria.Paths[Salida de origen de ADO NET4]"
+              endId="Package\Tarea_Extraccion_Datos_Jardineria\Destino_Empleados.Inputs[Entrada de destino de ADO NET]"
+              name="Salida de origen de ADO NET"
+              startId="Package\Tarea_Extraccion_Datos_Jardineria\Origen_EmpleadosJardineria.Outputs[Salida de origen de ADO NET]" />
+            <path
+              refId="Package\Tarea_Extraccion_Datos_Jardineria.Paths[Salida de origen de ADO NET5]"
+              endId="Package\Tarea_Extraccion_Datos_Jardineria\Destino_Detalle_Pedido.Inputs[Entrada de destino de ADO NET]"
+              name="Salida de origen de ADO NET"
+              startId="Package\Tarea_Extraccion_Datos_Jardineria\Origen_Detalle_PedidoJardineria.Outputs[Salida de origen de ADO NET]" />
+            <path
+              refId="Package\Tarea_Extraccion_Datos_Jardineria.Paths[Salida de origen de ADO NET6]"
+              endId="Package\Tarea_Extraccion_Datos_Jardineria\Destino_Cliente.Inputs[Entrada de destino de ADO NET]"
+              name="Salida de origen de ADO NET"
+              startId="Package\Tarea_Extraccion_Datos_Jardineria\Origen_ClienteJardineria.Outputs[Salida de origen de ADO NET]" />
+            <path
+              refId="Package\Tarea_Extraccion_Datos_Jardineria.Paths[Salida de origen de ADO NET7]"
+              endId="Package\Tarea_Extraccion_Datos_Jardineria\Destino_Categoria_Producto.Inputs[Entrada de destino de ADO NET]"
+              name="Salida de origen de ADO NET"
+              startId="Package\Tarea_Extraccion_Datos_Jardineria\Origen_Categoria_ProductoJardineria.Outputs[Salida de origen de ADO NET]" />
           </paths>
         </pipeline>
       </DTS:ObjectData>
@@ -3008,10 +3040,6 @@
       <GraphLayout
         Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="178,42"
-          Id="Package\Tarea_Extraccion_Datos_Jardineria\Destino_Empleados"
-          TopLeft="779,175" />
-        <NodeLayout
           Size="241,42"
           Id="Package\Tarea_Extraccion_Datos_Jardineria\Origen_Detalle_PedidoJardineria"
           TopLeft="741,310" />
@@ -3020,181 +3048,47 @@
           Id="Package\Tarea_Extraccion_Datos_Jardineria\Origen_ProductosJardineria"
           TopLeft="52,309" />
         <NodeLayout
-          Size="162,42"
-          Id="Package\Tarea_Extraccion_Datos_Jardineria\Destino_Pedidos"
-          TopLeft="93,167" />
-        <NodeLayout
           Size="201,42"
           Id="Package\Tarea_Extraccion_Datos_Jardineria\Origen_ClienteJardineria"
           TopLeft="1098.5,37.5" />
-        <NodeLayout
-          Size="157,42"
-          Id="Package\Tarea_Extraccion_Datos_Jardineria\Destino_Oficina"
-          TopLeft="392,425" />
-        <NodeLayout
-          Size="157,42"
-          Id="Package\Tarea_Extraccion_Datos_Jardineria\Destino_Cliente"
-          TopLeft="1119,169" />
         <NodeLayout
           Size="222,42"
           Id="Package\Tarea_Extraccion_Datos_Jardineria\Origen_EmpleadosJardineria"
           TopLeft="755,36" />
         <NodeLayout
-          Size="172,42"
-          Id="Package\Tarea_Extraccion_Datos_Jardineria\Destino_Productos"
-          TopLeft="68,418" />
-        <NodeLayout
           Size="201,42"
           Id="Package\Tarea_Extraccion_Datos_Jardineria\Origen_OficinaJardineria"
           TopLeft="375.5,309.5" />
-        <NodeLayout
-          Size="197,42"
-          Id="Package\Tarea_Extraccion_Datos_Jardineria\Destino_Detalle_Pedido"
-          TopLeft="767,423" />
         <NodeLayout
           Size="198,42"
           Id="Package\Tarea_Extraccion_Datos_Jardineria\Origen_PagosJardineria"
           TopLeft="377,35" />
         <NodeLayout
-          Size="154,42"
-          Id="Package\Tarea_Extraccion_Datos_Jardineria\Destino_Pagos"
-          TopLeft="403,179" />
-        <NodeLayout
           Size="264,42"
           Id="Package\Tarea_Extraccion_Datos_Jardineria\Origen_Categoria_ProductoJardineria"
           TopLeft="1071.5,308.5" />
         <NodeLayout
-          Size="220,42"
-          Id="Package\Tarea_Extraccion_Datos_Jardineria\Destino_Categoria_Producto"
-          TopLeft="1088,431" />
-        <NodeLayout
           Size="206,42"
           Id="Package\Tarea_Extraccion_Datos_Jardineria\Origen_PedidosJardineria"
           TopLeft="70.5,37.5" />
-        <EdgeLayout
-          Id="Package\Tarea_Extraccion_Datos_Jardineria.Paths[Salida de origen de ADO NET5]"
-          TopLeft="1200.75,350.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,80.5"
-              Start="0,0"
-              End="0,73">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,73" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Tarea_Extraccion_Datos_Jardineria.Paths[Salida de origen de ADO NET4]"
-          TopLeft="1198.25,79.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,89.5"
-              Start="0,0"
-              End="0,82">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,82" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Tarea_Extraccion_Datos_Jardineria.Paths[Salida de origen de ADO NET3]"
-          TopLeft="863.5,352">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,71"
-              Start="0,0"
-              End="0,63.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,63.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Tarea_Extraccion_Datos_Jardineria.Paths[Salida de origen de ADO NET2]"
-          TopLeft="867,78">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,97"
-              Start="0,0"
-              End="0,89.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,89.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Tarea_Extraccion_Datos_Jardineria.Paths[Salida de origen de ADO NET1]"
-          TopLeft="473.25,351.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,73.5"
-              Start="0,0"
-              End="0,66">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,66" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
+        <NodeLayout
+          Size="162,42"
+          Id="Package\Tarea_Extraccion_Datos_Jardineria\Destino_Pedidos"
+          TopLeft="95,177" />
         <EdgeLayout
           Id="Package\Tarea_Extraccion_Datos_Jardineria.Paths[Salida de origen de ADO NET]"
-          TopLeft="478,77">
+          TopLeft="174.75,79.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,102"
+              EndConnector="0,97.5"
               Start="0,0"
-              End="0,94.5">
+              End="0,90">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,94.5" />
+                    End="0,90" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -3203,9 +3097,13 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <NodeLayout
+          Size="172,42"
+          Id="Package\Tarea_Extraccion_Datos_Jardineria\Destino_Productos"
+          TopLeft="81,418" />
         <EdgeLayout
-          Id="Package\Tarea_Extraccion_Datos_Jardineria.Paths[Salida de origen de ADO NET7]"
-          TopLeft="157,351">
+          Id="Package\Tarea_Extraccion_Datos_Jardineria.Paths[Salida de origen de ADO NET1]"
+          TopLeft="163.5,351">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -3225,9 +3123,143 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <NodeLayout
+          Size="154,42"
+          Id="Package\Tarea_Extraccion_Datos_Jardineria\Destino_Pagos"
+          TopLeft="395,176" />
+        <EdgeLayout
+          Id="Package\Tarea_Extraccion_Datos_Jardineria.Paths[Salida de origen de ADO NET2]"
+          TopLeft="474,77">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,99"
+              Start="0,0"
+              End="0,91.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,91.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="157,42"
+          Id="Package\Tarea_Extraccion_Datos_Jardineria\Destino_Oficina"
+          TopLeft="392,424" />
+        <EdgeLayout
+          Id="Package\Tarea_Extraccion_Datos_Jardineria.Paths[Salida de origen de ADO NET3]"
+          TopLeft="473.25,351.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,72.5"
+              Start="0,0"
+              End="0,65">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,65" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="178,42"
+          Id="Package\Tarea_Extraccion_Datos_Jardineria\Destino_Empleados"
+          TopLeft="778,179" />
+        <EdgeLayout
+          Id="Package\Tarea_Extraccion_Datos_Jardineria.Paths[Salida de origen de ADO NET4]"
+          TopLeft="866.5,78">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,101"
+              Start="0,0"
+              End="0,93.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,93.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="197,42"
+          Id="Package\Tarea_Extraccion_Datos_Jardineria\Destino_Detalle_Pedido"
+          TopLeft="768,435" />
+        <EdgeLayout
+          Id="Package\Tarea_Extraccion_Datos_Jardineria.Paths[Salida de origen de ADO NET5]"
+          TopLeft="864,352">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,83"
+              Start="0,0"
+              End="0,75.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,75.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="157,42"
+          Id="Package\Tarea_Extraccion_Datos_Jardineria\Destino_Cliente"
+          TopLeft="1122,185" />
         <EdgeLayout
           Id="Package\Tarea_Extraccion_Datos_Jardineria.Paths[Salida de origen de ADO NET6]"
-          TopLeft="173.75,79.5">
+          TopLeft="1199.75,79.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,105.5"
+              Start="0,0"
+              End="0,98">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,98" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="220,42"
+          Id="Package\Tarea_Extraccion_Datos_Jardineria\Destino_Categoria_Producto"
+          TopLeft="1101,438" />
+        <EdgeLayout
+          Id="Package\Tarea_Extraccion_Datos_Jardineria.Paths[Salida de origen de ADO NET7]"
+          TopLeft="1207.25,350.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -3251,14 +3283,6 @@
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Tarea_Extraccion_Datos_Jardineria\Destino_Empleados">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
     design-time-name="Package\Tarea_Extraccion_Datos_Jardineria\Origen_Detalle_PedidoJardineria">
     <Properties>
       <Property>
@@ -3275,31 +3299,7 @@
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Tarea_Extraccion_Datos_Jardineria\Destino_Pedidos">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
     design-time-name="Package\Tarea_Extraccion_Datos_Jardineria\Origen_ClienteJardineria">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Tarea_Extraccion_Datos_Jardineria\Destino_Oficina">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Tarea_Extraccion_Datos_Jardineria\Destino_Cliente">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -3315,23 +3315,7 @@
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Tarea_Extraccion_Datos_Jardineria\Destino_Productos">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
     design-time-name="Package\Tarea_Extraccion_Datos_Jardineria\Origen_OficinaJardineria">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Tarea_Extraccion_Datos_Jardineria\Destino_Detalle_Pedido">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -3347,14 +3331,6 @@
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Tarea_Extraccion_Datos_Jardineria\Destino_Pagos">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
     design-time-name="Package\Tarea_Extraccion_Datos_Jardineria\Origen_Categoria_ProductoJardineria">
     <Properties>
       <Property>
@@ -3363,7 +3339,7 @@
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Tarea_Extraccion_Datos_Jardineria\Destino_Categoria_Producto">
+    design-time-name="Package\Tarea_Extraccion_Datos_Jardineria\Origen_PedidosJardineria">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -3371,7 +3347,63 @@
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Tarea_Extraccion_Datos_Jardineria\Origen_PedidosJardineria">
+    design-time-name="Package\Tarea_Extraccion_Datos_Jardineria\Destino_Pedidos">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Tarea_Extraccion_Datos_Jardineria\Destino_Productos">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Tarea_Extraccion_Datos_Jardineria\Destino_Pagos">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Tarea_Extraccion_Datos_Jardineria\Destino_Oficina">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Tarea_Extraccion_Datos_Jardineria\Destino_Empleados">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Tarea_Extraccion_Datos_Jardineria\Destino_Detalle_Pedido">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Tarea_Extraccion_Datos_Jardineria\Destino_Cliente">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Tarea_Extraccion_Datos_Jardineria\Destino_Categoria_Producto">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
