@@ -2,9 +2,11 @@ Readme
 
 -En este Drive compartido se encuentran las carpetas con todas las entregas de las actividades.
 
-Usar la carpeta de Anexos para obtener evidencias o los Backups de las bases de datos , de igual manera se puede obtener la versión final en el Git compartido.
+Usar la carpeta de Anexos para obtener evidencias o los Backups de las bases de datos , de igual manera se puede obtener la versión final en el Git o de la carpeta drive compartido.
 
 https://github.com/Duvis07/EA2_-Staging-_Jardineria.git
+
+https://drive.google.com/drive/folders/1mxmlNOiIkM05X9uUQGfaOjPC006N_A7t?usp=drive_link
 
 Para correr en máquina virtual , se debe clonar el repositorio. Para evitar fallas con las versiones se recomienda usar SQL server 2022 con las siguientes características:
 
@@ -25,6 +27,9 @@ Nota: Si se va a utilizar la ejecución de todo el flujo, debes cambiar el nombr
 Autores:
 
 Daniel Marín,
+
 Duván Botero,
+
 Davinson Rincón,
+
 Estefanía Jiménez
