@@ -24,7 +24,7 @@ Nota: Si se va a utilizar la ejecución de todo el flujo, debes cambiar el nombr
 
 Autores:
 
-Daniel Marín
-Duván Botero
-Davinson Rincón
+Daniel Marín,
+Duván Botero,
+Davinson Rincón,
 Estefanía Jiménez
