@@ -11,8 +11,8 @@
   DTS:LocaleID="9226"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="220"
-  DTS:VersionGUID="{54554D3C-AA45-41EE-8122-22ECB8F20C23}">
+  DTS:VersionBuild="223"
+  DTS:VersionGUID="{705B38F0-3E03-4401-B252-472275380FF2}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -3457,6 +3457,12 @@
                       cachedScale="2"
                       externalMetadataColumnId="Package\CargaDataMartHechos\FactVentas.Inputs[Entrada de destino de ADO NET].ExternalColumns[total_venta]"
                       lineageId="Package\CargaDataMartHechos\Merge Join.Outputs[Salida de combinación de mezcla].Columns[total_venta]" />
+                    <inputColumn
+                      refId="Package\CargaDataMartHechos\FactVentas.Inputs[Entrada de destino de ADO NET].Columns[ID_tiempo]"
+                      cachedDataType="i8"
+                      cachedName="ID_tiempo"
+                      externalMetadataColumnId="Package\CargaDataMartHechos\FactVentas.Inputs[Entrada de destino de ADO NET].ExternalColumns[ID_tiempo]"
+                      lineageId="Package\CargaDataMartHechos\Merge Join.Outputs[Salida de combinación de mezcla].Columns[ID_tiempo]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -3496,6 +3502,10 @@
                       name="total_venta"
                       precision="26"
                       scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\CargaDataMartHechos\FactVentas.Inputs[Entrada de destino de ADO NET].ExternalColumns[ID_tiempo]"
+                      dataType="i8"
+                      name="ID_tiempo" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
@@ -3601,6 +3611,11 @@
                       cachedPrecision="26"
                       cachedScale="2"
                       lineageId="Package\CargaDataMartHechos\OrdenarFactVentasST.Outputs[Salida de ordenación].Columns[total_venta]" />
+                    <inputColumn
+                      refId="Package\CargaDataMartHechos\Merge Join.Inputs[Entrada izquierda de combinación de mezcla].Columns[ID_tiempo]"
+                      cachedDataType="i8"
+                      cachedName="ID_tiempo"
+                      lineageId="Package\CargaDataMartHechos\OrdenarFactVentasST.Outputs[Salida de ordenación].Columns[ID_tiempo]" />
                   </inputColumns>
                   <externalMetadataColumns />
                 </input>
@@ -3732,6 +3747,19 @@
                           dataType="System.Int32"
                           description="La columna de entrada asociada a esta columna de salida"
                           name="InputColumnID">#{Package\CargaDataMartHechos\Merge Join.Inputs[Entrada izquierda de combinación de mezcla].Columns[total_venta]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\CargaDataMartHechos\Merge Join.Outputs[Salida de combinación de mezcla].Columns[ID_tiempo]"
+                      dataType="i8"
+                      lineageId="Package\CargaDataMartHechos\Merge Join.Outputs[Salida de combinación de mezcla].Columns[ID_tiempo]"
+                      name="ID_tiempo">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="La columna de entrada asociada a esta columna de salida"
+                          name="InputColumnID">#{Package\CargaDataMartHechos\Merge Join.Inputs[Entrada izquierda de combinación de mezcla].Columns[ID_tiempo]}</property>
                       </properties>
                     </outputColumn>
                     <outputColumn
@@ -3996,6 +4024,22 @@
                           name="NewSortKeyPosition">0</property>
                       </properties>
                     </inputColumn>
+                    <inputColumn
+                      refId="Package\CargaDataMartHechos\OrdenarFactVentas.Inputs[Entrada de ordenación].Columns[ID_tiempo]"
+                      cachedDataType="i8"
+                      cachedName="ID_tiempo"
+                      lineageId="Package\CargaDataMartHechos\OrigenFactVentas.Outputs[Salida de origen de ADO NET].Columns[ID_tiempo]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Especifica las opciones de comparación para datos de caracteres."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Especifica el criterio de ordenación de la columna."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
                   </inputColumns>
                   <externalMetadataColumns />
                 </input>
@@ -4113,6 +4157,19 @@
                           dataType="System.Int32"
                           description="Especifica el identificador de linaje de la columna de entrada que está asociada a esta columna de salida."
                           name="SortColumnId">#{Package\CargaDataMartHechos\OrigenFactVentas.Outputs[Salida de origen de ADO NET].Columns[total_venta]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\CargaDataMartHechos\OrdenarFactVentas.Outputs[Salida de ordenación].Columns[ID_tiempo]"
+                      dataType="i8"
+                      lineageId="Package\CargaDataMartHechos\OrdenarFactVentas.Outputs[Salida de ordenación].Columns[ID_tiempo]"
+                      name="ID_tiempo">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Especifica el identificador de linaje de la columna de entrada que está asociada a esta columna de salida."
+                          name="SortColumnId">#{Package\CargaDataMartHechos\OrigenFactVentas.Outputs[Salida de origen de ADO NET].Columns[ID_tiempo]}</property>
                       </properties>
                     </outputColumn>
                   </outputColumns>
@@ -4275,6 +4332,22 @@
                           name="NewSortKeyPosition">0</property>
                       </properties>
                     </inputColumn>
+                    <inputColumn
+                      refId="Package\CargaDataMartHechos\OrdenarFactVentasST.Inputs[Entrada de ordenación].Columns[ID_tiempo]"
+                      cachedDataType="i8"
+                      cachedName="ID_tiempo"
+                      lineageId="Package\CargaDataMartHechos\OrigenFactVentasST.Outputs[Salida de origen de ADO NET].Columns[ID_tiempo]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Especifica las opciones de comparación para datos de caracteres."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Especifica el criterio de ordenación de la columna."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
                   </inputColumns>
                   <externalMetadataColumns />
                 </input>
@@ -4392,6 +4465,19 @@
                           dataType="System.Int32"
                           description="Especifica el identificador de linaje de la columna de entrada que está asociada a esta columna de salida."
                           name="SortColumnId">#{Package\CargaDataMartHechos\OrigenFactVentasST.Outputs[Salida de origen de ADO NET].Columns[total_venta]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\CargaDataMartHechos\OrdenarFactVentasST.Outputs[Salida de ordenación].Columns[ID_tiempo]"
+                      dataType="i8"
+                      lineageId="Package\CargaDataMartHechos\OrdenarFactVentasST.Outputs[Salida de ordenación].Columns[ID_tiempo]"
+                      name="ID_tiempo">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Especifica el identificador de linaje de la columna de entrada que está asociada a esta columna de salida."
+                          name="SortColumnId">#{Package\CargaDataMartHechos\OrigenFactVentasST.Outputs[Salida de origen de ADO NET].Columns[ID_tiempo]}</property>
                       </properties>
                     </outputColumn>
                   </outputColumns>
@@ -4526,6 +4612,15 @@
                       precision="26"
                       scale="2"
                       truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\CargaDataMartHechos\OrigenFactVentas.Outputs[Salida de origen de ADO NET].Columns[ID_tiempo]"
+                      dataType="i8"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\CargaDataMartHechos\OrigenFactVentas.Outputs[Salida de origen de ADO NET].ExternalColumns[ID_tiempo]"
+                      lineageId="Package\CargaDataMartHechos\OrigenFactVentas.Outputs[Salida de origen de ADO NET].Columns[ID_tiempo]"
+                      name="ID_tiempo"
+                      truncationRowDisposition="FailComponent" />
                   </outputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -4565,6 +4660,10 @@
                       name="total_venta"
                       precision="26"
                       scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\CargaDataMartHechos\OrigenFactVentas.Outputs[Salida de origen de ADO NET].ExternalColumns[ID_tiempo]"
+                      dataType="i8"
+                      name="ID_tiempo" />
                   </externalMetadataColumns>
                 </output>
                 <output
@@ -4617,6 +4716,11 @@
                       precision="26"
                       scale="2" />
                     <outputColumn
+                      refId="Package\CargaDataMartHechos\OrigenFactVentas.Outputs[Salida de error de origen de ADO NET].Columns[ID_tiempo]"
+                      dataType="i8"
+                      lineageId="Package\CargaDataMartHechos\OrigenFactVentas.Outputs[Salida de error de origen de ADO NET].Columns[ID_tiempo]"
+                      name="ID_tiempo" />
+                    <outputColumn
                       refId="Package\CargaDataMartHechos\OrigenFactVentas.Outputs[Salida de error de origen de ADO NET].Columns[ErrorCode]"
                       dataType="i4"
                       lineageId="Package\CargaDataMartHechos\OrigenFactVentas.Outputs[Salida de error de origen de ADO NET].Columns[ErrorCode]"
@@ -4655,7 +4759,8 @@
     dp.ID_producto AS ID_producto,
     dp.cantidad AS cantidad_producto_vendido,
     ISNULL(CONVERT(VARCHAR, ped.fecha_entrega), 'NA') AS fecha_venta,
-    (dp.cantidad * dp.precio_unidad) AS total_venta
+    (dp.cantidad * dp.precio_unidad) AS total_venta,
+    ROW_NUMBER() OVER (ORDER BY ped.ID_pedido_o) AS ID_tiempo 
 FROM 
     [Stagin].[dbo].[Destino_Pedidos] ped
 INNER JOIN 
@@ -4780,6 +4885,15 @@ ORDER BY
                       precision="26"
                       scale="2"
                       truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\CargaDataMartHechos\OrigenFactVentasST.Outputs[Salida de origen de ADO NET].Columns[ID_tiempo]"
+                      dataType="i8"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\CargaDataMartHechos\OrigenFactVentasST.Outputs[Salida de origen de ADO NET].ExternalColumns[ID_tiempo]"
+                      lineageId="Package\CargaDataMartHechos\OrigenFactVentasST.Outputs[Salida de origen de ADO NET].Columns[ID_tiempo]"
+                      name="ID_tiempo"
+                      truncationRowDisposition="FailComponent" />
                   </outputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -4819,6 +4933,10 @@ ORDER BY
                       name="total_venta"
                       precision="26"
                       scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\CargaDataMartHechos\OrigenFactVentasST.Outputs[Salida de origen de ADO NET].ExternalColumns[ID_tiempo]"
+                      dataType="i8"
+                      name="ID_tiempo" />
                   </externalMetadataColumns>
                 </output>
                 <output
@@ -4871,6 +4989,11 @@ ORDER BY
                       precision="26"
                       scale="2" />
                     <outputColumn
+                      refId="Package\CargaDataMartHechos\OrigenFactVentasST.Outputs[Salida de error de origen de ADO NET].Columns[ID_tiempo]"
+                      dataType="i8"
+                      lineageId="Package\CargaDataMartHechos\OrigenFactVentasST.Outputs[Salida de error de origen de ADO NET].Columns[ID_tiempo]"
+                      name="ID_tiempo" />
+                    <outputColumn
                       refId="Package\CargaDataMartHechos\OrigenFactVentasST.Outputs[Salida de error de origen de ADO NET].Columns[ErrorCode]"
                       dataType="i4"
                       lineageId="Package\CargaDataMartHechos\OrigenFactVentasST.Outputs[Salida de error de origen de ADO NET].Columns[ErrorCode]"
@@ -4901,14 +5024,14 @@ ORDER BY
               startId="Package\CargaDataMartHechos\Merge Join.Outputs[Salida de combinación de mezcla]" />
             <path
               refId="Package\CargaDataMartHechos.Paths[Salida de ordenación]"
-              endId="Package\CargaDataMartHechos\Merge Join.Inputs[Entrada izquierda de combinación de mezcla]"
-              name="Salida de ordenación"
-              startId="Package\CargaDataMartHechos\OrdenarFactVentasST.Outputs[Salida de ordenación]" />
-            <path
-              refId="Package\CargaDataMartHechos.Paths[Salida de ordenación1]"
               endId="Package\CargaDataMartHechos\Merge Join.Inputs[Entrada derecha de combinación de mezcla]"
               name="Salida de ordenación"
               startId="Package\CargaDataMartHechos\OrdenarFactVentas.Outputs[Salida de ordenación]" />
+            <path
+              refId="Package\CargaDataMartHechos.Paths[Salida de ordenación1]"
+              endId="Package\CargaDataMartHechos\Merge Join.Inputs[Entrada izquierda de combinación de mezcla]"
+              name="Salida de ordenación"
+              startId="Package\CargaDataMartHechos\OrdenarFactVentasST.Outputs[Salida de ordenación]" />
             <path
               refId="Package\CargaDataMartHechos.Paths[Salida de origen de ADO NET]"
               endId="Package\CargaDataMartHechos\OrdenarFactVentasST.Inputs[Entrada de ordenación]"
@@ -20590,146 +20713,52 @@ ORDER BY fecha;</property>
         <NodeLayout
           Size="182,42"
           Id="Package\CargaDataMartHechos\OrigenFactVentasST"
-          TopLeft="83.5,73.5" />
-        <NodeLayout
-          Size="135,42"
-          Id="Package\CargaDataMartHechos\FactVentas"
-          TopLeft="336.5,536.5" />
+          TopLeft="84.5,72.5" />
         <NodeLayout
           Size="189,42"
           Id="Package\CargaDataMartHechos\OrdenarFactVentasST"
-          TopLeft="82,214" />
-        <EdgeLayout
-          Id="Package\CargaDataMartHechos.Paths[Salida de origen de ADO NET]"
-          TopLeft="175.5,115.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,98.5"
-              Start="0,0"
-              End="0,91">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,91" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="168,42"
-          Id="Package\CargaDataMartHechos\OrigenFactVentas"
-          TopLeft="490.5,74.5" />
-        <NodeLayout
-          Size="175,42"
-          Id="Package\CargaDataMartHechos\OrdenarFactVentas"
-          TopLeft="483,208" />
-        <EdgeLayout
-          Id="Package\CargaDataMartHechos.Paths[Salida de origen de ADO NET1]"
-          TopLeft="572.5,116.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,91.5"
-              Start="0,0"
-              End="0,84">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,84" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="133,42"
-          Id="Package\CargaDataMartHechos\Merge Join"
-          TopLeft="332,326" />
-        <EdgeLayout
-          Id="Package\CargaDataMartHechos.Paths[Salida de ordenación]"
-          TopLeft="176.5,256">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="201.166666666667,70"
-              Start="0,0"
-              End="201.166666666667,62.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,37.5007429420505" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,37.5007429420505"
-                    Point2="0,41.5007429420505"
-                    Point3="4,41.5007429420505" />
-                  <mssgle:LineSegment
-                    End="197.166666666667,41.5007429420505" />
-                  <mssgle:CubicBezierSegment
-                    Point1="197.166666666667,41.5007429420505"
-                    Point2="201.166666666667,41.5007429420505"
-                    Point3="201.166666666667,45.5007429420505" />
-                  <mssgle:LineSegment
-                    End="201.166666666667,62.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\CargaDataMartHechos.Paths[Salida de ordenación1]"
-          TopLeft="570.5,250">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-151.166666666667,76"
-              Start="0,0"
-              End="-151.166666666667,68.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,41.0579494799406" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,41.0579494799406"
-                    Point2="0,45.0579494799406"
-                    Point3="-4,45.0579494799406" />
-                  <mssgle:LineSegment
-                    End="-147.166666666667,45.0579494799406" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-147.166666666667,45.0579494799406"
-                    Point2="-151.166666666667,45.0579494799406"
-                    Point3="-151.166666666667,49.0579494799406" />
-                  <mssgle:LineSegment
-                    End="-151.166666666667,68.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
+          TopLeft="88,188" />
         <NodeLayout
           Size="218,42"
           Id="Package\CargaDataMartHechos\NuevosRegistrosFactVentas"
           TopLeft="294,437" />
+        <NodeLayout
+          Size="135,42"
+          Id="Package\CargaDataMartHechos\FactVentas"
+          TopLeft="332,537" />
         <EdgeLayout
-          Id="Package\CargaDataMartHechos.Paths[Salida de combinación de mezcla]"
-          TopLeft="400.75,368">
+          Id="Package\CargaDataMartHechos.Paths[Salida de origen de ADO NET]"
+          TopLeft="179,114.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,73.5"
+              Start="0,0"
+              End="0,66">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,66" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="175,42"
+          Id="Package\CargaDataMartHechos\OrdenarFactVentas"
+          TopLeft="499,188" />
+        <NodeLayout
+          Size="168,42"
+          Id="Package\CargaDataMartHechos\OrigenFactVentas"
+          TopLeft="500,77" />
+        <EdgeLayout
+          Id="Package\CargaDataMartHechos.Paths[Salida de origen de ADO NET1]"
+          TopLeft="585.25,119">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -20749,27 +20778,121 @@ ORDER BY fecha;</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <NodeLayout
+          Size="133,42"
+          Id="Package\CargaDataMartHechos\Merge Join"
+          TopLeft="342,304" />
         <EdgeLayout
-          Id="Package\CargaDataMartHechos.Paths[NuevosRegistros]"
-          TopLeft="403.5,479">
+          Id="Package\CargaDataMartHechos.Paths[Salida de ordenación]"
+          TopLeft="586.5,230">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,57.5"
+              EndConnector="-157.166666666667,74"
               Start="0,0"
-              End="0,50">
+              End="-157.166666666667,66.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,50" />
+                    End="0,39.8722139673105" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,39.8722139673105"
+                    Point2="0,43.8722139673105"
+                    Point3="-4,43.8722139673105" />
+                  <mssgle:LineSegment
+                    End="-153.166666666667,43.8722139673105" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-153.166666666667,43.8722139673105"
+                    Point2="-157.166666666667,43.8722139673105"
+                    Point3="-157.166666666667,47.8722139673105" />
+                  <mssgle:LineSegment
+                    End="-157.166666666667,66.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\CargaDataMartHechos.Paths[Salida de ordenación1]"
+          TopLeft="182.5,230">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="205.166666666667,74"
+              Start="0,0"
+              End="205.166666666667,66.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,39.8722139673105" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,39.8722139673105"
+                    Point2="0,43.8722139673105"
+                    Point3="4,43.8722139673105" />
+                  <mssgle:LineSegment
+                    End="201.166666666667,43.8722139673105" />
+                  <mssgle:CubicBezierSegment
+                    Point1="201.166666666667,43.8722139673105"
+                    Point2="205.166666666667,43.8722139673105"
+                    Point3="205.166666666667,47.8722139673105" />
+                  <mssgle:LineSegment
+                    End="205.166666666667,66.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\CargaDataMartHechos.Paths[Salida de combinación de mezcla]"
+          TopLeft="405.75,346">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,91"
+              Start="0,0"
+              End="0,83.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,83.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\CargaDataMartHechos.Paths[NuevosRegistros]"
+          TopLeft="401.25,479">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,58"
+              Start="0,0"
+              End="0,50.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,50.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-37.017578125,19.3076171875,74.03515625,11.384765625"
+              BoundingBox="-37.017578125,19.5576171875,74.03515625,11.384765625"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -22706,9 +22829,7 @@ ORDER BY fecha;</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -22742,9 +22863,7 @@ ORDER BY fecha;</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -22778,9 +22897,7 @@ ORDER BY fecha;</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -22814,9 +22931,7 @@ ORDER BY fecha;</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -22838,9 +22953,7 @@ ORDER BY fecha;</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -22886,9 +22999,7 @@ ORDER BY fecha;</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
